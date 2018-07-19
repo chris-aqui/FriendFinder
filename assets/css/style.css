@@ -1,5 +1,6 @@
 :root {
-  --main-bg-color: gray;
+  --main-bg-color: rgb(143, 188, 143);
+  --main-font-color: white;
 }
 
 /*  */
@@ -7,9 +8,15 @@
 html,
 body {
   background: var(--main-bg-color);
+  color: var(--main-font-color);
 }
 
-.header {
+.container {
+  width: 100vw;
+  display: flex;
+}
+
+.main-header {
   width: 60%;
   min-height: 600px;
   margin: auto;
@@ -17,8 +24,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(../image/key.png);
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-position: center;
+  /* background-image: url(../image/key.png); */
+  /* background-repeat: no-repeat; */
+  /* background-size: auto; */
+  /* background-position: center; */
+  /* opacity: 0.1; */
+}
+
+#keyLogo {
+  width: 300px;
 }
