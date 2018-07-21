@@ -2,7 +2,7 @@
 // =============================================================
 const express = require("express");
 const bodyParser = require("body-parser");
-// const path = require("path");
+const path = require("path");
 
 // Sets up the Express App
 // =============================================================
@@ -10,9 +10,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 // =============================================================
 // Sets up the Express app to handle data parsing
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(express.static("public"));
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(express.static("public"));
+
 // =============================================================
 
 // this parse various different custom JSON types as JSN
@@ -25,7 +26,9 @@ app.use(bodyParser.raw({type: 'application/vnd.custom-type'}));
 app.use(bodyParser.text({type: 'text/html'}));
 
 // require this file and pass in app
+require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
+app.use(express.static(path.join(__dirname, '/app/public/assets')));
 
 // Starts the server to begin listening
 // =============================================================
