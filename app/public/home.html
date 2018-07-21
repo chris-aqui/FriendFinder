@@ -9,30 +9,73 @@
   <!-- <link rel="stylesheet" href="/assets/css/reset.css"> -->
   <title>Room-mate Finder</title>
   <!--  -->
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/nav.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="nav.css">
+  <style>
+    :root {
+      --main-bg-color: rgb(143, 188, 143);
+      --main-font-color: white;
+    }
+
+    /*  */
+
+    html,
+    body {
+      background: var(--main-bg-color);
+      color: var(--main-font-color);
+    }
+
+    .container {
+      width: 100vw;
+      display: flex;
+    }
+
+    .main-header {
+      width: 60%;
+      min-height: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #keyLogo {
+      width: 300px;
+    }
+  </style>
 </head>
 
 <body>
+  <!--  -->
   <nav class="dt w-100 border-box pa3 ph5-ns">
-    <a class="dtc v-mid mid-gray link dim w-25" href="#" title="Home">
-      <img src="/assets/image/key.png" class="dib w2 h2 br-100" alt="Site Name">
+    <a class="dtc v-mid mid-gray link dim w-25" href="/home.html" title="Home">
+      <img src="key.png" class="dib w2 h2 br-100" alt="Site Name">
     </a>
     <div class="dtc v-mid w-75 tr">
-      <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" href="/" title="About">Availability</a>
-      <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" href="/signup" title="Store">SignUp</a>
-      <a class="link dim dark-gray f6 f5-ns dib" href="/login" title="Contact">Login</a>
+      <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" href="/survey.html" title="About">Survey</a>
+
     </div>
   </nav>
+
+  <!--  -->
+
   <div class="container">
     <div class="main-header">
       <h3>Welcome to </h3>
       <h1>Roomie!</h1>
-      <h5>The #1 Room Mate finder Application!</h5>
-      <img id="keyLogo" src="/assets/image/key.png" alt="">
+      <h3>The #1 Room Mate finder Application!</h3>
+      <img id="keyLogo" src="key.png" alt="key logo">
     </div>
   </div>
+  <!--  -->
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>
