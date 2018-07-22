@@ -24,17 +24,48 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background-image: url(../image/key.png); */
-  /* background-repeat: no-repeat; */
-  /* background-size: auto; */
-  /* background-position: center; */
-  /* opacity: 0.1; */
 }
 
 #keyLogo {
   width: 300px;
 }
 
+.headText {
+  text-align: center;
+}
+
 .modal {
   color: black;
 }
+
+.input-field {
+  padding: 20px;
+}
+
+.buttonDiv {
+  margin-bottom: 20px;
+}
+
+/*  */
+
+/* Box Shadow Outset */
+
+.hvr-box-shadow-outset {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+}
+
+.hvr-box-shadow-outset:hover,
+.hvr-box-shadow-outset:focus,
+.hvr-box-shadow-outset:active {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+/*  */

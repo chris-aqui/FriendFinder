@@ -17,20 +17,20 @@ module.exports = function (app) {
       photo: '',
       friendDiff: 1000
     };
-    console.log('req body is: ', req.body);
+    // console.log('req body is: ', req.body);
 
     // takes the user entered results from the survey post and parses it
     let userData = req.body;
     let userScores = userData.scores;
 
-    console.log('user scores is ', userScores);
+    // console.log('user scores is ', userScores);
 
     // calulated diff
     let totalDiff = 0;
 
     // looop though all the friends in the db
     for (let i = 0; i < friends.length; i++) {
-      console.log(`friend at index ${i} is ${friends[i]}`);
+      // console.log(`friend at index ${i} is ${friends[i]}`);
       totalDiff = 0;
 
       // loop over all the scores

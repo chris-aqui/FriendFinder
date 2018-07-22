@@ -5,14 +5,14 @@ module.exports = function (app) {
 // remember routs order matters!!!
 
   app.get("/survey", function(req, res) {
-    console.log('going to survey page');
+    // console.log('going to survey page');
     res.sendFile(path.join(__dirname, "/../public/survey.html"));
   });
 
   app.get('*.css', )
 
   app.get("/", function(req, res) {
-    console.log('going to home page');
+    // console.log('going to home page');
     res.sendFile(path.join(__dirname, "/../public/home.html"));
   });
 
