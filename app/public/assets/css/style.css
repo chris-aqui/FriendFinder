@@ -39,11 +39,19 @@ body {
 }
 
 .input-field {
-  padding: 20px;
+  padding: 15px;
+}
+
+.chosen-select {
+  min-width: 200px;
+  max-width: 350px;
+  padding: 10px;
 }
 
 .buttonDiv {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 /*  */
