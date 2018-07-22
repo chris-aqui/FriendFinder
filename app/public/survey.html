@@ -32,21 +32,21 @@
           <div id="mainpanel-content">
             <h1>Survey Questions</h1>
             <div class="divider"></div>
-
+            <!--  -->
             <h3>About You</h3>
-
+            <!--  -->
             <div class="input-field col s6">
               <h5>Name (Required)</h5>
               <i class="material-icons prefix">account_circle</i>
-              <input type="text" class="validate" placeholder="Your Name Here" id="userName">
+              <input type="text" class="validate" placeholder="Your Name Here" id="userName" class="form-control">
             </div>
-
+            <!--  -->
             <div class="input-field col s6">
               <h5>Link to Photo Image (Required)</h5>
               <i class="material-icons prefix">picture_in_picture</i>
-              <input type="text" class="validate" placeholder="Photo Link Here" id="userPhoto">
+              <input type="text" class="validate" placeholder="Photo Link Here" id="userPhoto" class="form-control">
             </div>
-
+            <!--  -->
             <!-- Survey Questions -->
             <div class="input-field col s12">
               <h3>Question 1</h3>
@@ -60,7 +60,7 @@
                 <option value="5">5 (Strongly Agree)</option>
               </select>
             </div>
-
+            <!--  -->
             <div class="input-field col s12">
               <h3>Question 2</h3>
               <h5>Generally speaking, you rely more on your experience than your imagination.</h5>
@@ -73,7 +73,7 @@
                 <option value="5">5 (Strongly Agree)</option>
               </select>
             </div>
-
+            <!--  -->
             <div class="input-field col s12">
               <h3>Question 3</h3>
               <h5>You find it easy to stay relaxed and focused even when there is some pressure.</h5>
@@ -86,7 +86,7 @@
                 <option value="5">5 (Strongly Agree)</option>
               </select>
             </div>
-
+            <!--  -->
             <div class="input-field col s12">
               <h3>Question 4</h3>
               <h5>You rarely do something just out of sheer curiosity.</h5>
@@ -99,7 +99,7 @@
                 <option value="5">5 (Strongly Agree)</option>
               </select>
             </div>
-
+            <!--  -->
             <div class="input-field col s12">
               <h3>Question 5</h3>
               <h5>People can rarely upset you.</h5>
@@ -112,7 +112,7 @@
                 <option value="5">5 (Strongly Agree)</option>
               </select>
             </div>
-
+            <!--  -->
             <div class="input-field col s12">
               <h3>Question 6</h3>
               <h5>It is often difficult for you to relate to other people’s feelings.</h5>
@@ -125,7 +125,7 @@
                 <option value="5">5 (Strongly Agree)</option>
               </select>
             </div>
-
+            <!--  -->
             <div class="input-field col s12">
               <h3>Question 7</h3>
               <h5>In a discussion, truth should be more important than people’s sensitivities.</h5>
@@ -138,7 +138,7 @@
                 <option value="5">5 (Strongly Agree)</option>
               </select>
             </div>
-
+            <!--  -->
             <div class="input-field col s12">
               <h3>Question 8</h3>
               <h5>You rarely get carried away by fantasies and ideas.</h5>
@@ -151,7 +151,7 @@
                 <option value="5">5 (Strongly Agree)</option>
               </select>
             </div>
-
+            <!--  -->
             <div class="input-field col s12">
               <h3>Question 9</h3>
               <h5>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h5>
@@ -164,7 +164,7 @@
                 <option value="5">5 (Strongly Agree)</option>
               </select>
             </div>
-
+            <!--  -->
             <div class="input-field col s12">
               <h3>Question 10</h3>
               <h5>You feel more energetic after spending time with a group of people.</h5>
@@ -177,7 +177,6 @@
                 <option value="5">5 (Strongly Agree)</option>
               </select>
             </div>
-
             <!-- Survey Submit Button -->
             <br>
             <div>
@@ -190,7 +189,28 @@
       </div>
     </div>
   </main>
-
+  <!--  -->
+  <div id='resultsModal' class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <!--  -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Best Match</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+          <img id='matchImg' src="" alt="user match image">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -199,49 +219,59 @@
 
   <script>
     $('#submitButton').on('click', function () {
-
-          //do form validation
-          function validateForm() {
-            let isValid = true;
-            $('.chosen-select').each(function () {
-              if ($(this).val() === '') {
-                isValid = false;
-              }
-            });
-            //
-            // $('.chosen-select').each(function() {
-
-            // });
-            return isValid;
+      //do form validation
+      function validateForm() {
+        let isValid = true;
+        $('.chosen-select').each(function () {
+          if ($(this).val() === '') {
+            isValid = false;
           }
-
-          //if everything is filled
-          if (validateForm() == true) {
-            //creates a new friend from the values submitted
-            var newFriend = {
-              name: $('#userName').val().trim(),
-              profilePic: $('#userPhoto').val().trim(),
-              scores: [
-                $('#question1').val(),
-                $('#question2').val(),
-                $('#question3').val(),
-                $('#question4').val(),
-                $('#question5').val(),
-                $('#question6').val(),
-                $('#question7').val(),
-                $('#question8').val(),
-                $('#question9').val(),
-                $('#question10').val(),
-              ]
-            };
-            // get the URL
-            let currentURL = window.location.origin;
-
-            // make an ajax post the data to the friend api
-            $.post(currentURL + '/api/friends', userData, function (data) {
-              alert("working");
-            })
+        });
+        //
+        $('.form-contro').each(function () {
+          if ($(this).val() === '') {
+            isValid = false;
           }
+        });
+        return isValid;
+      };
+
+      // check that the form is valid
+      //if everything is filled
+      if (validateForm() == true) {
+        //creates a new friend object from the values submitted
+        var newFriend = {
+          name: $('#userName').val().trim(),
+          profilePic: $('#userPhoto').val().trim(),
+          scores: [
+            $('#question1').val(),
+            $('#question2').val(),
+            $('#question3').val(),
+            $('#question4').val(),
+            $('#question5').val(),
+            $('#question6').val(),
+            $('#question7').val(),
+            $('#question8').val(),
+            $('#question9').val(),
+            $('#question10').val(),
+          ]
+        };
+        // get the URL
+        let currentURL = window.location.origin;
+        // make an ajax post the data to the friend api
+        $.post(currentURL + '/api/friends', newFriend, function (data) {
+          console.log('in modal function');
+          // grab results data for modeal
+          $("#matchName").text(data.name)
+          $("#matchImg").attr('src', data.photo);
+          // show the modal with results
+          $('#resultsModal').modal('toggle');
+          alert("working");
+        });
+      } else {
+        alert('Please fiil out all the fields before submitting');
+      }
+    });
   </script>
 
 

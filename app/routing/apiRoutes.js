@@ -36,7 +36,7 @@ module.exports = function (app) {
       // loop over all the scores
       for (var j = 0; j < friends[i].scores[j]; j++) {
         //  find the diff between the score and sum
-        totalDiff += math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
+        totalDiff += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
 
         // check if sum diff is less than diff of best match
         if (totalDiff <= bestMatch.friendDiff) {
