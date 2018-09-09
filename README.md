@@ -2,7 +2,7 @@
 
 <img src="/Roommate Finder.gif" />
 
-This app records results from users' survey forms. The user's responses are compared against those of other users. Friend finder will then search for the best overall match and return their name and photograph.
+This app records results from user survey forms. The user responses are compared against those of other users. Friend finder will then search for the best overall match and return their name and photograph.
 
 #### Resources Used
 
